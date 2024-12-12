@@ -16,7 +16,7 @@ public class OrderService {
     private RestTemplate restTemplate;
 
     public Order queryOrderById(Long orderId) {
-        // 1.查询订单
+        // 1.查询订单(测试)
         Order order = orderMapper.findById(orderId);
         String url = "http://localhost:8081/user/" + order.getUserId();
         User user = restTemplate.getForObject(url, User.class);
